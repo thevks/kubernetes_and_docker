@@ -1,0 +1,14 @@
+Deploying multi nodes Kubernets cluster
+
+#minikube start --nodes 2 -p multinode-demo
+#kubectl get nodes
+#minikube status -p multinode-demo
+#kubectl apply -f hello-deployment.yaml
+#kubectl rollout status deployment/hello
+#kubectl apply -f hello-svc.yaml
+#kubectl get pods -o wide
+#minikube service list -p multinode-demo
+
+Chek the service
+#curl  http://192.168.49.2:31000
+
