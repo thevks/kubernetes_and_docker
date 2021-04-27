@@ -1,14 +1,26 @@
 Deploying multi nodes Kubernets cluster
 
-#minikube start --nodes 2 -p multinode-demo
-#kubectl get nodes
-#minikube status -p multinode-demo
-#kubectl apply -f hello-deployment.yaml
-#kubectl rollout status deployment/hello
-#kubectl apply -f hello-svc.yaml
-#kubectl get pods -o wide
-#minikube service list -p multinode-demo
+1) Installing minikube
+    #wget https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+    #sudo cp minikube-linux-amd64 /usr/local/bin/minikube
+    #sudo chmod 755 /usr/local/bin/minikube
 
-Chek the service
-#curl  http://192.168.49.2:31000
+2) Installing kubectl
+    #curl -LO https://storage.googleapis.com/kubernetes-release/release/`curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt`/bin/linux/amd64/kubectl
+    #chmod +x ./kubectl
+    #sudo mv ./kubectl /usr/local/bin/kubectl
+
+3) Create a Kubernetes cluster
+
+    #minikube start --nodes 2 -p multinode-demo
+    #kubectl get nodes
+    #minikube status -p multinode-demo
+    #kubectl apply -f hello-deployment.yaml
+    #kubectl rollout status deployment/hello
+    #kubectl apply -f hello-svc.yaml
+    #kubectl get pods -o wide
+    #minikube service list -p multinode-demo
+
+4) Chek the service
+    #curl  http://192.168.49.2:31000
 
